@@ -1,1 +1,45 @@
-theme: jekyll-theme-minimal
+# Site settings. Edit these, commit, and GitHub Pages rebuilds the site.
+title: Kaies Al Mahmud
+description: >-
+  PhD candidate in Electrical and Computer Engineering at the University of
+  Georgia. I build microwave radiometers on software-defined radios and study
+  how they can share spectrum with 5G.
+url: "https://kaiesalmahmud.github.io"
+baseurl: ""
+lang: en
+author: Kaies Al Mahmud
+
+email: kaies@uga.edu
+scholar: "https://scholar.google.com/citations?user=ATq0tdsAAAAJ"
+github: "https://github.com/kaiesalmahmud"
+linkedin: "https://www.linkedin.com/in/kaiesalmahmud"
+
+# Put a PDF in assets/pdf/ and set its path here to show a download button
+# on the CV page, for example: /assets/pdf/Kaies_Al_Mahmud_CV.pdf
+cv_pdf: ""
+
+# Put a portrait in assets/img/ and set its path here to show it on the
+# home page, for example: /assets/img/portrait.jpg
+portrait: ""
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope: { path: "", type: "projects" }
+    values: { layout: "project" }
+  - scope: { path: "" }
+    values: { layout: "page" }
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - tools
+  - Gemfile
+  - Gemfile.lock
+  - vendor

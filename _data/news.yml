@@ -1,0 +1,11 @@
+# Newest first. The home page shows the first five.
+- when: Nov 2026
+  text: Defended my dissertation proposal.
+- when: Oct 2026
+  text: Led our second interference campaign at the AERPAW testbed, with 120 experiments at four receiver sites.
+- when: Sep 2026
+  text: Presented the S-band radiometer at IEEE VTC2026-Fall in Boston.
+- when: 2026
+  text: Attended the IEEE GRSS Microwave Radiometry School.
+- when: 2025
+  text: Our team won the IEEE GRSS Student Grand Challenge with the Forest Vital Signs project.

@@ -1,0 +1,20 @@
+---
+title: Gallery
+permalink: /gallery/
+lead: Photos and video from field campaigns, the lab, training and earlier projects.
+wide: true
+---
+{% assign media = site.data.gallery %}
+{% assign cats = "Field campaigns,Lab,Training and conferences,Earlier work" | split: "," %}
+{% if media.size > 1 %}
+<div class="filters" role="group" aria-label="Filter the gallery">
+  <button type="button" class="filter" data-filter="all" aria-pressed="true">All</button>
+  {% for c in cats %}{% assign n = media | where: "category", c | size %}{% if n > 0 %}
+  <button type="button" class="filter" data-filter="{{ c | slugify }}" aria-pressed="false">{{ c }}</button>
+  {% endif %}{% endfor %}
+</div>
+{% endif %}
+<div class="tiles" id="gallery">
+  {% for m in media %}{% include media-tile.html m=m %}{% endfor %}
+</div>
+{% include lightbox.html %}

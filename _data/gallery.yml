@@ -1,0 +1,29 @@
+# Photos and video for the Gallery page. Newest first.
+#
+# The easy way to add photos is the helper script, which resizes them,
+# removes location data, and adds the entries here for you:
+#
+#   python3 tools/add_media.py ~/Pictures/aerpaw/*.jpg \
+#       --category "Field campaigns" --project aerpaw-campaigns --date "Oct 2026"
+#
+# Then edit the titles and captions below.
+#
+# Fields
+#   title     short name shown under the tile (required)
+#   caption   one sentence of context (optional)
+#   date      free text, for example "Oct 2026" (optional)
+#   category  one of: Field campaigns, Lab, Training and conferences, Earlier work
+#   project   key of a project page that should also show this item (optional)
+#   alt       description of the photo for screen readers (optional)
+# and exactly one of
+#   photo     file name in assets/media/full/ (a same-named thumbnail lives in assets/media/thumb/)
+#   video     file name in assets/media/video/ (keep clips short, under about 25 MB)
+#   youtube   the ID of a YouTube video, the part after "watch?v="
+#   playlist  the ID of a YouTube playlist, the part after "list="
+
+- title: Smart parking demo
+  caption: Parking slot occupancy and Bengali license plate reading on live camera feeds.
+  date: "2023"
+  category: Earlier work
+  project: smart-parking
+  playlist: PL_z9CsGY5aWaGXuF_rLssy94Zh0DSZq4F

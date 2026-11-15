@@ -1,0 +1,37 @@
+---
+title: Projects
+permalink: /projects/
+lead: Instruments, field experiments and software from my PhD, and machine learning work from before it.
+wide: true
+---
+{% assign all = site.projects | sort: "order" %}
+<section class="group">
+  <h2>PhD research</h2>
+  <ul class="project-list">
+  {% for p in all %}{% if p.group == "phd" %}
+    <li>
+      {% if p.image %}<a class="thumb" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ p.image | relative_url }}" alt="" loading="lazy"></a>{% endif %}
+      <div>
+        <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+        <p>{{ p.summary }}</p>
+        <p class="meta">{{ p.where }}{% if p.period %}, {{ p.period }}{% endif %}</p>
+      </div>
+    </li>
+  {% endif %}{% endfor %}
+  </ul>
+</section>
+<section class="group">
+  <h2>Earlier work</h2>
+  <ul class="project-list">
+  {% for p in all %}{% if p.group == "earlier" %}
+    <li>
+      {% if p.image %}<a class="thumb" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ p.image | relative_url }}" alt="" loading="lazy"></a>{% endif %}
+      <div>
+        <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+        <p>{{ p.summary }}</p>
+        <p class="meta">{% if p.where %}{{ p.where }}, {% endif %}{{ p.period }}</p>
+      </div>
+    </li>
+  {% endif %}{% endfor %}
+  </ul>
+</section>

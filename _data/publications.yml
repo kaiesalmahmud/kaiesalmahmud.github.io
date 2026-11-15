@@ -1,0 +1,51 @@
+# Newest first. Set "selected: true" to also show a paper on the home page.
+# "links" is optional: add a DOI, a PDF or slides when you have them.
+- title: "SDR-Based Agile S-Band Radiometer for Active-Passive Spectrum Coexistence in Shared Bands"
+  authors: "K. Al Mahmud, A. C. Gurbuz, M. Kurum"
+  venue: "IEEE Vehicular Technology Conference (VTC2026-Fall), Boston, MA, 2026"
+  year: 2026
+  type: conference
+  selected: true
+
+- title: "Unlocking Forest Vital Signs: High Spatiotemporal VOD Mapping at Large Scales Fusing GNSS-T and LiDAR Data"
+  authors: "A. Ghosh et al."
+  venue: "IEEE International Geoscience and Remote Sensing Symposium (IGARSS), Washington, DC, 2026"
+  year: 2026
+  type: conference
+
+- title: "Collection: UAV-Based Wireless Multi-modal Measurements from AERPAW Autonomous Data Mule (AADM) Challenge in Digital Twin and Real-World Environments"
+  authors: "M. S. Hossen et al., including K. Al Mahmud"
+  venue: "IEEE Data Descriptions, 2026"
+  year: 2026
+  type: journal
+  links:
+    - { label: "DOI", url: "https://doi.org/10.1109/IEEEDATA.2026.3685296" }
+    - { label: "arXiv", url: "https://arxiv.org/abs/2602.16163" }
+
+- title: "Microwave Radiometry in the Unprotected S-Band: Development of an Adaptive Radiometer and Digital Twin Integration"
+  authors: "K. Al Mahmud, M. Kurum, M. M. Farhad, A. M. Alam, A. C. Gurbuz"
+  venue: "IEEE International Geoscience and Remote Sensing Symposium (IGARSS), Brisbane, Australia, 2025, pp. 2500-2504"
+  year: 2025
+  type: conference
+  selected: true
+
+- title: "Adaptive Semi-Supervised Federated Learning with Selective Knowledge Distillation"
+  authors: "S. F. Ahmed, K. Al Mahmud, M. S. Islam, L. Jamal"
+  venue: "IEEE International Conference on Big Data (BigData), Macau, 2025, pp. 3345-3354"
+  year: 2025
+  type: conference
+  selected: true
+
+- title: "SDR-Based S-Band Radiometer for UAS Platforms with Spectrum Monitoring and Dynamic Allocation"
+  authors: "K. Al Mahmud, M. Kurum"
+  venue: "USNC-URSI National Radio Science Meeting (NRSM), Boulder, CO, 2025"
+  year: 2025
+  type: conference
+
+- title: "BananaSqueezeNet: A very fast, lightweight convolutional neural network for the diagnosis of three prominent banana leaf diseases"
+  authors: "M. A. B. Bhuiyan, H. M. Abdullah, S. E. Arman, S. S. Rahman, K. Al Mahmud"
+  venue: "Smart Agricultural Technology, vol. 4, 100214, 2023"
+  year: 2023
+  type: journal
+  links:
+    - { label: "DOI", url: "https://doi.org/10.1016/j.atech.2023.100214" }

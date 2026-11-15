@@ -1,0 +1,34 @@
+{% assign m = include.m %}
+{% if m.youtube or m.playlist %}
+  {% if m.playlist %}
+    {% assign embed = "https://www.youtube-nocookie.com/embed/videoseries?list=" | append: m.playlist %}
+    {% assign watch = "https://www.youtube.com/playlist?list=" | append: m.playlist %}
+  {% else %}
+    {% assign embed = "https://www.youtube-nocookie.com/embed/" | append: m.youtube %}
+    {% assign watch = "https://www.youtube.com/watch?v=" | append: m.youtube %}
+  {% endif %}
+  <figure class="tile tile-video" data-category="{{ m.category | slugify }}">
+    <a class="tile-open" href="{{ watch }}" data-kind="embed" data-src="{{ embed }}" data-caption="{{ m.title | escape }}{% if m.caption and m.caption != "" %}. {{ m.caption | escape }}{% endif %}">
+      {% if m.youtube %}<img src="https://i.ytimg.com/vi/{{ m.youtube }}/hqdefault.jpg" alt="" loading="lazy">{% else %}<span class="tile-blank"></span>{% endif %}
+      <span class="play" aria-hidden="true"></span>
+      <span class="sr">Play video: {{ m.title }}</span>
+    </a>
+    <figcaption><strong>{{ m.title }}</strong>{% if m.date and m.date != "" %} <span class="when">{{ m.date }}</span>{% endif %}{% if m.caption and m.caption != "" %}<br>{{ m.caption }}{% endif %}</figcaption>
+  </figure>
+{% elsif m.video %}
+  <figure class="tile tile-video" data-category="{{ m.category | slugify }}">
+    <a class="tile-open" href="{{ '/assets/media/video/' | append: m.video | relative_url }}" data-kind="video" data-src="{{ '/assets/media/video/' | append: m.video | relative_url }}" data-caption="{{ m.title | escape }}{% if m.caption and m.caption != "" %}. {{ m.caption | escape }}{% endif %}">
+      {% if m.poster %}<img src="{{ '/assets/media/thumb/' | append: m.poster | relative_url }}" alt="" loading="lazy">{% else %}<span class="tile-blank"></span>{% endif %}
+      <span class="play" aria-hidden="true"></span>
+      <span class="sr">Play video: {{ m.title }}</span>
+    </a>
+    <figcaption><strong>{{ m.title }}</strong>{% if m.date and m.date != "" %} <span class="when">{{ m.date }}</span>{% endif %}{% if m.caption and m.caption != "" %}<br>{{ m.caption }}{% endif %}</figcaption>
+  </figure>
+{% else %}
+  <figure class="tile" data-category="{{ m.category | slugify }}">
+    <a class="tile-open" href="{{ '/assets/media/full/' | append: m.photo | relative_url }}" data-kind="photo" data-src="{{ '/assets/media/full/' | append: m.photo | relative_url }}" data-caption="{{ m.title | escape }}{% if m.caption and m.caption != "" %}. {{ m.caption | escape }}{% endif %}">
+      <img src="{{ '/assets/media/thumb/' | append: m.photo | relative_url }}" alt="{% if m.alt and m.alt != "" %}{{ m.alt | escape }}{% else %}{{ m.title | escape }}{% endif %}" loading="lazy">
+    </a>
+    <figcaption><strong>{{ m.title }}</strong>{% if m.date and m.date != "" %} <span class="when">{{ m.date }}</span>{% endif %}{% if m.caption and m.caption != "" %}<br>{{ m.caption }}{% endif %}</figcaption>
+  </figure>
+{% endif %}

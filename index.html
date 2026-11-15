@@ -1,7 +1,74 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-</html>
+---
+layout: default
+title: Kaies Al Mahmud
+---
+<section class="hero wrap">
+  <div class="hero-text">
+    <h1>I build RF instruments and the data behind them.</h1>
+    <p class="lead">I'm Kaies Al Mahmud, a PhD candidate in Electrical and Computer Engineering at the University of Georgia. I designed and built an S-band microwave radiometer on a software-defined radio, and I use it in controlled 5G interference experiments at the AERPAW testbed.</p>
+    <p class="actions">
+      <a class="button primary" href="{{ '/research/' | relative_url }}">Read about my research</a>
+      <a class="button" href="{{ '/cv/' | relative_url }}">CV</a>
+      <a class="button" href="mailto:{{ site.email }}">Email me</a>
+    </p>
+  </div>
+  {% if site.portrait != "" %}
+  <img class="portrait" src="{{ site.portrait | relative_url }}" alt="Portrait of Kaies Al Mahmud" width="240" height="300">
+  {% endif %}
+</section>
+
+<figure class="spectro wrap">
+  <div class="spectro-plot">
+    <ul class="spectro-axis" aria-hidden="true"><li>3.50 GHz</li><li>3.40</li><li>3.30</li></ul>
+    <canvas id="spectrogram" width="1200" height="220" role="img" aria-label="Illustration of a spectrogram: a noisy background with bright rectangular bursts in one part of the band"></canvas>
+  </div>
+  <figcaption>What a radiometer sees in shared spectrum: faint natural noise across the band, and bursts from a nearby transmitter in part of it. This is an illustration drawn for this page, not measured data.</figcaption>
+</figure>
+<script src="{{ '/assets/js/spectrogram.js' | relative_url }}" defer></script>
+
+<div class="wrap home-grid">
+  <section>
+    <h2>Recent</h2>
+    <ul class="news">
+      {% for n in site.data.news limit: 5 %}
+      <li><span class="when">{{ n.when }}</span><span>{{ n.text }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section>
+    <h2>Selected work</h2>
+    <ul class="work">
+      {% assign feat = site.projects | where: "featured", true | sort: "order" %}
+      {% assign phd = feat | where: "group", "phd" %}
+      {% assign earlier = feat | where: "group", "earlier" %}
+      {% for p in phd %}
+      <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a><p>{{ p.summary }}</p></li>
+      {% endfor %}
+      {% for p in earlier %}
+      <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a><p>{{ p.summary }}</p></li>
+      {% endfor %}
+    </ul>
+    <p><a href="{{ '/projects/' | relative_url }}">All projects</a></p>
+  </section>
+</div>
+
+<section class="wrap home-section">
+  <h2>Selected publications</h2>
+  <ul class="pubs">
+    {% assign sel = site.data.publications | where: "selected", true %}
+    {% for p in sel %}{% include pub.html p=p %}{% endfor %}
+  </ul>
+  <p><a href="{{ '/publications/' | relative_url }}">All publications</a></p>
+</section>
+
+{% assign media = site.data.gallery %}
+{% if media.size > 3 %}
+<section class="wrap home-section">
+  <h2>From the field and the lab</h2>
+  <div class="tiles">
+    {% for m in media limit: 4 %}{% include media-tile.html m=m %}{% endfor %}
+  </div>
+  <p><a href="{{ '/gallery/' | relative_url }}">Open the gallery</a></p>
+  {% include lightbox.html %}
+</section>
+{% endif %}

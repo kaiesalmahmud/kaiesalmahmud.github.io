@@ -1,0 +1,12 @@
+---
+title: Publications
+permalink: /publications/
+wide: true
+---
+<p>An up-to-date list with citations is on <a href="{{ site.scholar }}">Google Scholar</a>.</p>
+{% assign journals = site.data.publications | where: "type", "journal" %}
+{% assign confs = site.data.publications | where: "type", "conference" %}
+<h2>Journal articles</h2>
+<ul class="pubs">{% for p in journals %}{% include pub.html p=p %}{% endfor %}</ul>
+<h2>Conference papers</h2>
+<ul class="pubs">{% for p in confs %}{% include pub.html p=p %}{% endfor %}</ul>

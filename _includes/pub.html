@@ -1,0 +1,7 @@
+<li class="pub">
+  <p class="pub-title">{{ include.p.title }}</p>
+  <p class="pub-authors">{{ include.p.authors | replace: "K. Al Mahmud", "<strong>K. Al Mahmud</strong>" }}</p>
+  <p class="pub-venue">{{ include.p.venue }}{% if include.p.note %} ({{ include.p.note }}){% endif %}
+    {% for l in include.p.links %}<a class="tag-link" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
+  </p>
+</li>

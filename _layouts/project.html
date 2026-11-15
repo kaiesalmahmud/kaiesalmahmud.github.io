@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article class="wrap page">
+  <header class="page-head">
+    <p class="crumb"><a href="{{ '/projects/' | relative_url }}">Projects</a></p>
+    <h1>{{ page.title }}</h1>
+    <p class="lead">{{ page.summary }}</p>
+    <dl class="facts">
+      {% if page.period %}<div><dt>When</dt><dd>{{ page.period }}</dd></div>{% endif %}
+      {% if page.where %}<div><dt>Where</dt><dd>{{ page.where }}</dd></div>{% endif %}
+      {% if page.role %}<div><dt>My role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+      {% if page.tools %}<div><dt>Tools</dt><dd>{{ page.tools }}</dd></div>{% endif %}
+    </dl>
+    {% if page.links %}
+    <p class="actions">{% for l in page.links %}<a class="button" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
+    {% endif %}
+  </header>
+  {% if page.image %}
+  <figure class="project-figure">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}">
+    {% if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}
+  </figure>
+  {% endif %}
+  <div class="prose">
+{{ content }}
+  </div>
+  {% assign media = site.data.gallery | where: "project", page.key %}
+  {% if media.size > 0 %}
+  <section class="project-media">
+    <h2>Photos and video</h2>
+    <div class="tiles">
+      {% for m in media %}{% include media-tile.html m=m %}{% endfor %}
+    </div>
+  </section>
+  {% include lightbox.html %}
+  {% endif %}
+</article>

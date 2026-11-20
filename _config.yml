@@ -20,7 +20,7 @@ cv_pdf: ""
 
 # Put a portrait in assets/img/ and set its path here to show it on the
 # home page, for example: /assets/img/portrait.jpg
-portrait: ""
+portrait: "/assets/img/portrait.jpg"
 
 collections:
   projects:
